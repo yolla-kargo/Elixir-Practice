@@ -19,10 +19,11 @@ defmodule Workshop1Web.Router do
   scope "/", Workshop1Web do
     pipe_through :api
 
-    post "/add_vehicle", VehicleController, :create
-    get "/get_vehicle", VehicleController, :index
-    post "/add_transporter", TransporterController, :create
-    get "/get_transporter", TransporterController, :index
+    post "/vehicle", VehicleController, :create
+    get "/vehicles", VehicleController, :index
+    post "/transporter", TransporterController, :create
+    put "/transporter/status/:id", TransporterController, :update
+    get "/transporters", TransporterController, :index
   end
 
   # Enables LiveDashboard only for development

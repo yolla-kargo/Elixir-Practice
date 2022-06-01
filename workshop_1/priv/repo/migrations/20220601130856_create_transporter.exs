@@ -7,7 +7,7 @@ defmodule Workshop1.Repo.Migrations.CreateTransporter do
       add :name, :string
       add :phone_number, :string
       add :npwp_number, :string
-      add :status, :string
+      add :status, :string, default: "not_validated"
 
       timestamps()
     end
