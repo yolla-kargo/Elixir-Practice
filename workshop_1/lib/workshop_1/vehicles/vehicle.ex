@@ -4,7 +4,7 @@ defmodule Workshop1.Vehicles.Vehicle do
 
   @primary_key {:id, :id, autogenerate: true}
   schema "vehicle" do
-    field :status, :string
+    field :status, :string, default: "not_validated"
     field :vehicle_plate, :string
 
     timestamps()

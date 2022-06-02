@@ -40,5 +40,8 @@ defmodule Workshop1Web.TransporterController do
       send_resp(conn, :no_content, "")
     end
   end
+
+  # def input(conn, %{"transporter" => transporter_params}) do
+  #   query = 
 end
 

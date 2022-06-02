@@ -21,10 +21,17 @@ defmodule Workshop1Web.Router do
 
     post "/vehicle", VehicleController, :create
     get "/vehicles", VehicleController, :index
+    put "/vehicle/status/:id", VehicleController, :update
     post "/transporter", TransporterController, :create
     put "/transporter/status/:id", TransporterController, :update
     get "/transporters", TransporterController, :index
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+        schema: Workshop1Web.Transporter.Schema, # GraphQL Schema Module
+        interface: :simple,
+        context: %{pubsub: Workshop1Web.Endpoint}
   end
+  
 
   # Enables LiveDashboard only for development
   #

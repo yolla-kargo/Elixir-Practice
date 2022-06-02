@@ -17,5 +17,6 @@ defmodule Workshop1.Transporters.Transporter do
     transporter
     |> cast(attrs, [:id, :name, :phone_number, :npwp_number, :status])
     |> validate_required([:name, :phone_number, :npwp_number])
+    |> unique_constraint(:phone_number)
   end
 end

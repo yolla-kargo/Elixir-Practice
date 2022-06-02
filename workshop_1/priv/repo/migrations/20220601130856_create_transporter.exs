@@ -11,5 +11,7 @@ defmodule Workshop1.Repo.Migrations.CreateTransporter do
 
       timestamps()
     end
+
+    create unique_index(:transporter, [:phone_number])
   end
 end
